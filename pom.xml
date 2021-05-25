@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>xyz.foolcat</groupId>
+    <artifactId>foolcat-cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>foolcat-iaas</module>
+        <module>foolcat-common</module>
+        <module>foolcat-admin</module>
+        <module>foolcat-member</module>
+        <module>foolcat-erp</module>
+    </modules>
+
+    <!-- 父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!-- 依赖版本管理 -->
+    <!-- spring-cloud版本可以去 https://start.spring.io 根据springBoot自己查看 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
+        <swagger.version>2.0.0</swagger.version>
+        <lombok.vesion>1.18.20</lombok.vesion>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+<!--        <dependency>-->
+<!--            <groupId>io.swagger.core.v3</groupId>-->
+<!--            <artifactId>swagger-annotations</artifactId>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+    </dependencies>
+</project>
