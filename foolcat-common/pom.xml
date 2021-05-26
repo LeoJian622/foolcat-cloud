@@ -25,18 +25,20 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alicp.jetcache</groupId>
             <artifactId>jetcache-starter-redis</artifactId>
-            <version>2.6.0</version>
         </dependency>
         <dependency>
             <groupId>io.springside</groupId>
             <artifactId>springside-utils</artifactId>
-            <version>5.0.0-RC1</version>
         </dependency>
     </dependencies>
 
