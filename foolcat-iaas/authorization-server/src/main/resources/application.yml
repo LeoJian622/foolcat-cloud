@@ -1,0 +1,13 @@
+server:
+  port: 8849
+spring:
+  application:
+    name: authorization-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #        namespace: e23b1149-8fa2-4d6e-aa65-00ce8d78d266
+  redis:
+    host: 127.0.0.1
+    port: 6379

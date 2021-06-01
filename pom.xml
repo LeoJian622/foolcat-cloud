@@ -41,6 +41,7 @@
         <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
         <jetcache-starter-redis.version>2.6.0</jetcache-starter-redis.version>
         <springside-utils.version>5.0.0-RC1</springside-utils.version>
+        <spring-boot-starter-data-redis.version>2.1.0.1.8</spring-boot-starter-data-redis.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -48,6 +49,8 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -85,6 +88,11 @@
                 <groupId>io.springside</groupId>
                 <artifactId>springside-utils</artifactId>
                 <version>${springside-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.AnonymousMister</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
