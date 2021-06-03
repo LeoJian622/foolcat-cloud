@@ -14,6 +14,7 @@ spring:
     #            group: DEFAULT_GROUP  # 默认分组就是DEFAULT_GROUP，如果使用默认分组可以不配置
     #            file-extension: yml   #默认properties
     gateway:
+      enabled: true
       discovery:
         locator:
           enabled: true    #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
@@ -28,14 +29,15 @@ spring:
             - StripPrefix=1              # 转发之前去掉1层路径
     sentinel:
       transport:
-        port: 8719
         dashboard: sentinel.foolcat.xyz:8858
       datasource:
-        ds1.nacos:
-          serverAddr: nacos.foolcat.xyz:8848
-          dataId: gateway-sentinel-gw-flow
-          ruleType: gw_flow
-        ds2.naos:
-          serverAddr: nacos.foolcat.xyz:8848
-          dataId: gateway-sentinel-api-group
-          ruleType: api_group
+        flow:
+          nacos:
+            serverAddr: nacos.foolcat.xyz:8848
+            dataId: gateway-sentinel-gw-flow
+            ruleType: GW_FLOW
+        group:
+          nacos:
+            serverAddr: nacos.foolcat.xyz:8848
+            dataId: gateway-sentinel-api-group
+            ruleType: GW_API_GROUP
