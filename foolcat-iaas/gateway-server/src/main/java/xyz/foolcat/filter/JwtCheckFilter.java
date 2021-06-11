@@ -65,7 +65,7 @@ public class JwtCheckFilter implements GlobalFilter, Ordered {
         jsonObject.put("error", "NoAuthorization");
         jsonObject.put("errorMsg", "Token is Null or Error");
         DataBuffer wrap = response.bufferFactory().wrap(jsonObject.toJSONString().getBytes());
-        response.writeWith(Flux.just(wrap));
+        return response.writeWith(Flux.just(wrap));
     }
 
     /**
@@ -88,7 +88,7 @@ public class JwtCheckFilter implements GlobalFilter, Ordered {
      */
     private boolean isReuireToken(ServerWebExchange exchange) {
         String path = exchange.getRequest().getURI().getPath();
-        return noRequireTokenUris.contains(path);
+        return !noRequireTokenUris.contains(path);
     }
 
     @Override
