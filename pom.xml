@@ -44,8 +44,7 @@
         <springside-utils.version>5.0.0-RC1</springside-utils.version>
         <spring-boot-starter-data-redis.version>2.1.0.1.8</spring-boot-starter-data-redis.version>
         <nacos-client.version>2.0.1</nacos-client.version>
-        <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
-        <springfox-swagger2-ui.version>3.0.0</springfox-swagger2-ui.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
         <hutool-all.version>5.6.6</hutool-all.version>
         <mapstruct-jdk8.version>1.4.2.Final</mapstruct-jdk8.version>
         <mapstruct-processor.version>1.4.2.Final</mapstruct-processor.version>
@@ -103,13 +102,8 @@
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox-swagger2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox-swagger2-ui.version}</version>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
