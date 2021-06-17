@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 /**
  * @author Leojan
@@ -30,6 +31,7 @@ public class JacksonConfig {
         SimpleModule simpleModule = new SimpleModule();
         simpleModule.addSerializer(Long.class, ToStringSerializer.instance);
         objectMapper.registerModule(simpleModule);
+        objectMapper.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mmm:ss"));
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         return objectMapper;
