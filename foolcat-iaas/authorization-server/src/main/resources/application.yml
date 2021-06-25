@@ -11,3 +11,6 @@ spring:
   redis:
     host: redis.foolcat.xyz
     port: 6379
+dubbo:
+  scan:
+    base-packages: xyz.foolcat.impl
